@@ -1,0 +1,21 @@
+# RAW: Refusal Aversion in the Wild -- pipeline dependencies.
+# Python 3.11+. Versions pinned to those used for the released results.
+#
+# Core pipeline (extraction, API labelling, embedding orchestration,
+# matching, AIPW, sensitivity, figures). Runs on CPU.
+numpy==2.4.2
+pandas==3.0.1
+scipy==1.16.2
+scikit-learn==1.7.1
+matplotlib==3.10.6
+openai==2.30.0
+ollama==0.6.1
+requests==2.32.5
+
+# Optional: local open-weights refusal-judge fallback (allenai/wildguard),
+# needed only to reproduce the ~1% wildguard labels, not the headline
+# pipeline. Install the torch build matching your hardware (CUDA / ROCm /
+# CPU); the authors used a ROCm dev build, so the pins below are a floor
+# rather than the exact build.
+# torch>=2.2
+# transformers==5.3.0
